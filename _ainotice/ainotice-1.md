@@ -1,6 +1,6 @@
 ---
-title: "AI Notice item number 1"
-excerpt: "Short description of AI Notice item number 1<br/><img src='/images/500x300.png'>"
+title: "AI Notice"
+excerpt: "AI Notice<br/><img src='/images/500x300.png'>"
 collection: ainotice
 ---
 
