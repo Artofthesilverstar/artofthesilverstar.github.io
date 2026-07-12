@@ -17,7 +17,7 @@ This is the new code that separates projects into two sections: Active Projects 
 <!-- Alternatively, sort active by start_date: | sort: "start_date" | reverse -->
 
 {% if active_projects.size > 0 %}
-  <h2 id="active" class="archive__subtitle">Active Projects</h2>
+  <br><h2 id="active" class="archive__subtitle">Active</h2>
   <div class="projects-grid"> <!-- Use your theme's grid class -->
     {% for project in active_projects %}
       <div class="archive__item">
@@ -29,7 +29,6 @@ This is the new code that separates projects into two sections: Active Projects 
         </a>
         <p class="page__date">
           <strong>Started:</strong> {{ project.start_date }} 
-          {% if project.end_date %}– {{ project.end_date }}{% else %}– Active{% endif %}
         </p>
         {% if project.excerpt %}
           <p class="archive__item-excerpt">{{ project.excerpt }}</p>
@@ -44,7 +43,7 @@ This is the new code that separates projects into two sections: Active Projects 
 {% assign completed_projects = site.projects | where: "status", "completed" | sort: "end_date" | reverse %}
 
 {% if completed_projects.size > 0 %}
-  <h2 id="completed" class="archive__subtitle">Completed Projects</h2>
+  <br><h2 id="completed" class="archive__subtitle">Completed Projects</h2>
   <div class="projects-grid">
     {% for project in completed_projects %}
       <div class="archive__item">

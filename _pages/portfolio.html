@@ -15,7 +15,7 @@ author_profile: true
 {% assign categories = site.portfolio | map: 'category' | uniq %}
 {% for cat in categories %}
   <!-- 1. Print the Category Header -->
-  <h2 id="{{ cat }}" class="archive__subtitle">{{ cat | replace: '-', ' ' | capitalize }}</h2>
+  <br><h2 id="{{ cat }}" class="archive__subtitle">{{ cat | replace: '-', ' ' | capitalize }}</h2>
   
   <div class="gallery-grid"> <!-- Optional: Use your theme's grid class -->
     
