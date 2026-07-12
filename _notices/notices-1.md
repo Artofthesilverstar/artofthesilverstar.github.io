@@ -1,0 +1,7 @@
+---
+title: "Unauthorized Commitment"
+excerpt: "Unauthorized Commitment Notice"
+collection: notices
+---
+
+The content presented on this website reflects my own views and words as a private citizen. Nothing stated herein obligates any third party, whether private or governmental, to commit funds, resources, or work. I do not represent any entity other than myself through the use of this website. 

@@ -29,8 +29,8 @@ main:
   - title: "Blog"
     url: /year-archive/
 
-  - title: "AI Notice"
-    url: /ainotice/
+  - title: "Notices"
+    url: /notices/
 
 #  - title: "CV"
 #    url: /cv/
