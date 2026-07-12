@@ -224,9 +224,9 @@ collections:
 #  teaching:
 #    output: true
 #    permalink: /:collection/:path/
-  publications:
-    output: true
-    permalink: /:collection/:path/
+#  publications:
+#    output: true
+#    permalink: /:collection/:path/
   experience:
     output: true
     permalink: /:collection/:path/
@@ -251,7 +251,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: single-no-share
       author_profile: true
       read_time: true
       comments: true
@@ -262,7 +262,7 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single-alt
+      layout: single-no-share
       share: false
       comments: false
       author_profile: true
@@ -280,7 +280,7 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: single-no-share
       author_profile: true
       share: true
       comments: true
@@ -289,7 +289,7 @@ defaults:
       path: ""
       type: experience
     values:
-      layout: single-alt
+      layout: single-no-share
       author_profile: true
       share: false
       comment: false
@@ -300,16 +300,18 @@ defaults:
       path: ""
       type: projects
     values:
-      layout: single-alt
+      layout: single-no-share
       author_profile: true
       share: false
       comment: false
+      sort_by: date
+      order: reverse
   # _portfolio
   - scope:
       path: ""
       type: portfolio
     values:
-      layout: single
+      layout: single-no-share
       author_profile: true
       share: false
       comment: false
@@ -326,7 +328,7 @@ defaults:
       path: ""
       type: notices
     values:
-      layout: single-alt
+      layout: single-no-share
       author_profile: true
       share: false
       comment: false
