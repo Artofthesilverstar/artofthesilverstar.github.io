@@ -11,8 +11,8 @@ locale                   : "en-US"
 site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Art of the Silver Star"
 title_separator          : "-"
-name                     : &name "Cade Rohde"
-description              : &description "My personal portfolio for professional and amateur work"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "M Cade Rohde"
+description              : &description "My portfolio for my experience, projects, and portfolio of work."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://artofthesilverstar.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Cade Rohde"
   pronouns         : # example: "she/her"  
-  bio              : "Works as a Technical Communicator in the government sector in Information Technology. Brings extensive cross-disciplinary training from outside IT to bridge gaps between technical teams and subjects. Applies knowledge from several non-IT fields to daily work. Also an active artist with experience in a wide range of art forms."
+  bio              : "Technical Communicator, IT Specialist, and Creative Artist"
   location         : #"Earth"
   employer         : #"Red Brick University"
   uri              : # URL
