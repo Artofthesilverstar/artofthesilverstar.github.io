@@ -7,25 +7,44 @@ author_profile: true
 
 {% include base_path %}
 
-{% comment %}  
+{% comment %}
   This is the new display view of the Portfolio items on the portfolio page, grouped by category and without the date printed.
   The old display view is commented out below.
 {% endcomment %}
 
 {% assign categories = site.portfolio | map: 'category' | uniq %}
 {% for cat in categories %}
-  <h2>{{ cat | replace: '-', ' ' | capitalize }}</h2> <!-- Converts "fractal-art" to "Fractal Art" -->
-  <div class="gallery-grid">
+  <!-- 1. Print the Category Header -->
+  <h2 id="{{ cat }}">{{ cat | replace: '-', ' ' | capitalize }}</h2>
+  
+  <div class="gallery-grid"> <!-- Optional: Use your theme's grid class -->
+    
+    <!-- 2. Loop through ALL portfolio items -->
     {% for item in site.portfolio %}
+      
+      <!-- 3. Filter: Only show items matching the current category -->
       {% if item.category == cat %}
-         <!-- Display item card here -->
-         <div class="card">
-            <img src="{{ item.image }}" alt="{{ item.title }}">
-            <h3>{{ item.title }}</h3>
-            <!-- No date printed here -->
-         </div>
+        
+        <!-- 4. The Card/Link Block -->
+        <div class="archive__item">
+          <a href="{{ item.url }}">
+            {% if item.image %}
+              <img src="{{ item.image }}" alt="{{ item.title }}" style="max-width: 100%; height: auto;">
+            {% endif %}
+            <h3 class="archive__item-title">{{ item.title }}</h3>
+          </a>
+          
+          <!-- Optional: Add excerpt if you have it -->
+          {% if item.excerpt %}
+            <p class="archive__item-excerpt">{{ item.excerpt }}</p>
+          {% endif %}
+          
+        </div>
+        <!-- End Card -->
+
       {% endif %}
     {% endfor %}
+    
   </div>
 {% endfor %}
 
@@ -33,7 +52,7 @@ author_profile: true
 
 {% comment %}  
   This is the old display view of the Portfolio items
-        
+
 {% for post in site.portfolio %}
   {% include archive-single.html %}
 {% endfor %}
