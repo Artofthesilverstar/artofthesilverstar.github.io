@@ -262,7 +262,9 @@ defaults:
       path: ""
       type: pages
     values:
-      layout: single
+      layout: single-alt
+      share: false
+      comments: false
       author_profile: true
   # _teaching
   - scope:
@@ -287,19 +289,19 @@ defaults:
       path: ""
       type: experience
     values:
-      layout: single
+      layout: single-alt
       author_profile: true
-      share: true
-      comment: true
+      share: false
+      comment: false
  # _projects
   - scope:
       path: ""
       type: projects
     values:
-      layout: single
+      layout: single-alt
       author_profile: true
-      share: true
-      comment: true
+      share: false
+      comment: false
   # _portfolio
   - scope:
       path: ""
@@ -307,8 +309,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comment: true
+      share: false
+      comment: false
   # _talks
   - scope:
       path: ""
@@ -322,10 +324,10 @@ defaults:
       path: ""
       type: notices
     values:
-      layout: single
+      layout: single-alt
       author_profile: true
-      share: true
-      comment: true
+      share: false
+      comment: false
 
 # Sass/SCSS
 sass:
