@@ -7,8 +7,36 @@ author_profile: true
 
 {% include base_path %}
 
+{% comment %}
+This is the new code for the Experience page that replaces the original code below. It loops through all experience items and displays them in a custom format, including title, dates, and excerpt. The items are sorted by end_date in reverse order as specified in the _config.yml file.
+{% endcomment %}
+
+{% for experience in site.experience %}
+
+  <div class="archive__item">
+    <!-- 1. Title (Linked to the sub-page) -->
+    <h3 class="archive__item-title" itemprop="headline">
+      <a href="{{ experience.url }}" rel="permalink">{{ experience.title }}</a>
+    </h3>
+    <!-- 2. Dates on their own line with specific formatting -->
+    <p class="page__date">
+      <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Duration:</strong><br>
+      Start Date: {{ experience.start_date | date: "%Y-%m" }}<br>
+      End Date: {% if experience.end_date %}{{ experience.end_date | date: "%Y-%m" }}{% else %}Current day{% endif %}
+    </p>
+    <!-- 3. Excerpt / Description -->
+    {% if experience.excerpt %}
+      <p class="archive__item-excerpt" itemprop="description">{{ experience.excerpt }}</p>
+    {% endif %}
+  </div>
+{% endfor %}
+
+
+{% comment %}
+This is the original code on the Experience page that was replaced with the new code above.
 
 {% for post in site.experience %}
   {% include archive-single.html %}
 {% endfor %}
 
+{% endcomment %}
