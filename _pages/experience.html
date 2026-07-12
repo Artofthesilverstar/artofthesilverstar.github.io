@@ -20,9 +20,8 @@ This is the new code for the Experience page that replaces the original code bel
     </h3>
     <!-- 2. Dates on their own line with specific formatting -->
     <p class="page__date">
-      <strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Duration:</strong><br>
-      Start Date: {{ experience.start_date | date: "%Y-%m" }}<br>
-      End Date: {% if experience.end_date %}{{ experience.end_date | date: "%Y-%m" }}{% else %}Current day{% endif %}
+      <strong>Start Date:</strong> {{ experience.start_date | date: "%Y-%m" }}<br>
+      <strong>End Date:</strong> {% if experience.end_date %}{{ experience.end_date | date: "%Y-%m" }}{% else %}Current{% endif %}
     </p>
     <!-- 3. Excerpt / Description -->
     {% if experience.excerpt %}
