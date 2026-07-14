@@ -12,24 +12,40 @@ This is the new code for the Education page that replaces the original code belo
 {% endcomment %}
 
 
-<!-- Simple Loop for Education -->
-{% for item in site.education %}
-  <div class="archive__item">
-    <h3 class="archive__item-title" itemprop="headline">
-      <a href="{{ item.url }}" rel="permalink">{{ item.title }}</a>
-    </h3>
-    
-    <p class="page__date">
-      <strong>Institution:</strong> {{ item.institution }}<br>
-      <strong>Date:</strong> {{ item.date | date: "%Y-%m" }} 
-      {% if item.expdate %} | <strong>Expires:</strong> {{ item.expdate | date: "%Y-%m" }}{% endif %}
-    </p>
-    
-    {% if item.excerpt %}
-      <p class="archive__item-excerpt">{{ item.excerpt }}</p>
-    {% endif %}
+<!-- 1. Get all unique categories and sort them alphabetically -->
+{% assign categories = site.education | map: 'category' | uniq | sort %}
+
+<!-- 2. Loop through each category -->
+{% for cat in categories %}
+  <!-- Skip if category is empty -->
+  {% if cat == "" %}{% continue %}{% endif %}
+  <!-- 3. Print the Category Header (Matching your Blog/Project style) -->
+  <h2 id="{{ cat | slugify }}" class="archive__subtitle">{{ cat | capitalize }}</h2>
+  <div class="education-list">
+    <!-- 4. Loop through ALL education items -->
+    {% for item in site.education %}
+      <!-- 5. Filter: Only show items that match the current category -->
+      {% if item.category == cat %}
+        <div class="archive__item">
+          <!-- Title Link -->
+          <h3 class="archive__item-title" itemprop="headline">
+            <a href="{{ item.url }}" rel="permalink">{{ item.title }}</a>
+          </h3>
+          <!-- Institution & Date -->
+          <p class="page__date">
+            <strong>Institution:</strong> {{ item.institution }}<br>
+            <strong>Date:</strong> {{ item.date | date: "%Y-%m" }} 
+            {% if item.expdate %} | <strong>Expires:</strong> {{ item.expdate | date: "%Y-%m" }}{% else %} | <strong>Status:</strong> Lifetime{% endif %}
+          </p>
+          <!-- Excerpt -->
+          {% if item.excerpt %}
+            <p class="archive__item-excerpt">{{ item.excerpt }}</p>
+          {% endif %}
+        </div>
+        <hr>
+      {% endif %}
+    {% endfor %}
   </div>
-  <hr>
 {% endfor %}
 
 
