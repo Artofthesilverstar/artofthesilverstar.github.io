@@ -1,8 +1,7 @@
 ---
-layout: archive
-title: "Education"
+title: "Education & Credentials"
+layout: single-no-share
 permalink: /education/
-author_profile: true
 ---
 
 {% include base_path %}
@@ -13,20 +12,25 @@ This is the new code for the Education page that replaces the original code belo
 {% endcomment %}
 
 
-{% if page.expdate %}
-  {% assign exp_date = page.expdate | date: "%s" %}
-  {% assign now = "now" | date: "%s" %}
-  {% if exp_date < now %}
-    <span class="badge-expired">Expired</span>
-  {% else %}
-    <span class="badge-active">Active</span>
-  {% endif %}
-{% else %}
-  <span class="badge-lifetime">Lifetime</span>
-{% endif %}
-
-
-
+<!-- Simple Loop for Education -->
+{% for item in site.education %}
+  <div class="archive__item">
+    <h3 class="archive__item-title" itemprop="headline">
+      <a href="{{ item.url }}" rel="permalink">{{ item.title }}</a>
+    </h3>
+    
+    <p class="page__date">
+      <strong>Institution:</strong> {{ item.institution }}<br>
+      <strong>Date:</strong> {{ item.date | date: "%Y-%m" }} 
+      {% if item.expdate %} | <strong>Expires:</strong> {{ item.expdate | date: "%Y-%m" }}{% endif %}
+    </p>
+    
+    {% if item.excerpt %}
+      <p class="archive__item-excerpt">{{ item.excerpt }}</p>
+    {% endif %}
+  </div>
+  <hr>
+{% endfor %}
 
 
 {% comment %}
