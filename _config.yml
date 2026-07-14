@@ -346,8 +346,6 @@ defaults:
       comment: false
       sort_by: date
       order: reverse
-	  
-
 
 # Sass/SCSS
 sass:
