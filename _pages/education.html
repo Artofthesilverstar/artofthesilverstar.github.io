@@ -1,0 +1,39 @@
+---
+layout: archive
+title: "Education & Certifications"
+permalink: /education/
+author_profile: true
+---
+
+{% include base_path %}
+
+
+{% comment %}
+This is the new code for the Education page that replaces the original code below.
+{% endcomment %}
+
+
+{% if page.expdate %}
+  {% assign exp_date = page.expdate | date: "%s" %}
+  {% assign now = "now" | date: "%s" %}
+  {% if exp_date < now %}
+    <span class="badge-expired">Expired</span>
+  {% else %}
+    <span class="badge-active">Active</span>
+  {% endif %}
+{% else %}
+  <span class="badge-lifetime">Lifetime</span>
+{% endif %}
+
+
+
+
+
+{% comment %}
+This is the original code on the Education page that was replaced with the new code above.
+
+{% for post in site.experience %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% endcomment %}
